@@ -1,0 +1,97 @@
+﻿@model IEnumerable<Joes_Pizza_Shop.Models.Pizza>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+
+
+<h1>🍕🍕🍕Pizza Section 🍕🍕🍕</h1>
+<html xmlns="http://www.w3.org/1999/xhtml">
+    <head><title></title></head>
+<body>
+    <h4>Total pizzas are @ViewBag.pizza</h4>
+</body>
+</html>
+<style>
+    body{
+        background-color:cornsilk;
+
+    }
+    .aa{
+        background-color:antiquewhite;
+    }
+    .ser{
+        top:70;
+        left:4%;
+        right:4%;
+        height:50%;
+        width:96%;
+        
+    }
+</style>
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<div class="aa">
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Pizza_Id)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Pizza_Name)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Pizza_Size)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Pizza_Price)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Pizza_Discount)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Pizza_Id)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Pizza_Name)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Pizza_Size)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Pizza_Price)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Pizza_Discount)
+            </td>
+            <td>
+                @Html.ActionLink("Add To Cart 🍕", "Cart", new {id=item.Pizza_Id })
+                
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
+</div>
+<div class="ser" >
+    <marquee>
+        <img src="https://www.simplyrecipes.com/thmb/pjYMLcsKHkr8D8tYixmaFNxppPw=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/__opt__aboutcom__coeus__resources__content_migration__simply_recipes__uploads__2019__09__easy-pepperoni-pizza-lead-3-8f256746d649404baa36a44d271329bc.jpg" alt="Alternate Text" width="200px" height="200px" />
+        <img src="https://1.bp.blogspot.com/-kEvzzdyw3Rg/XlN-dXHviEI/AAAAAAAALFk/DzHE2loNLkoDauSoxgzTOU8ktlAVcJHigCEwYBhgL/s1600/IMG_20200218_212353.jpg" alt="Alternate Text" width="200px" height="200px" />
+        <img src="https://img.onmanorama.com/content/dam/mm/en/food/features/images/2021/10/17/pizza.jpg.transform/schema-16x9/image.jpg" alt="Alternate Text" width="200px" height="200px" />
+        <img src="https://www.eatingwell.com/thmb/PhRj8Sp6g5m-Cn9AJL2zeLi1LM4=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/easy-vegan-pizza-1x1-002-a224f13696b3483d8099b7ae5b494250.jpg" alt="Alternate Text" width="200px" height="200px" />
+        <img src="https://www.dominos.co.in/great-deals/online-pizza-coupons/images/story_images/evd/evd-199.jpg" alt="Alternate Text" width="250px" height="200px" />
+        
+        
+        
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRhEqivgjE--exVzG6SXgt46wSXQxLl9xepdA&usqp=CAU" alt="Alternate Text" />
+    </marquee>
+</div>
